@@ -6,10 +6,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//Funciones que responden a los metodos GET POST PUT DELETE
-app.get('/', function (req, res) {
-    res.send('Hello World!');
-  });
+require('./api/router.js')(app);
 
 //Iniciamos el servidor escuchando por el puerto 3500 
 app.listen(3500, function(){
