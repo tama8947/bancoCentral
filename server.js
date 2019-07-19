@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 //Importamos la libreria o modulo router mandandole como parametro la instancia de servidor express
 require('./api/router.js')(app);
-//Iniciamos el servidor escuchando por el puerto 4500 
-app.listen(4500, function(){
-    console.log('EL servidor esta corriendo por el puerto 4500');
+//Iniciamos el servidor escuchando por un puerto  
+app.listen(9000, function(){
+    console.log('EL servidor esta corriendo por el puerto 9000');
 });
