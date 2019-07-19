@@ -1,4 +1,14 @@
+const ClienteControlador = require('../app/controladores/clienteControlador.js');
+
 module.exports = (app) => {
+
+app.get('/clientes/:id', function(req, res){
+    ClienteControlador.consultaCliente(req, res);
+});
+
+app.get('/clientes', function(req, res){
+    ClienteControlador.consultaClientes(req, res);
+});
 
 //Funciones que responden a los metodos GET POST PUT DELETE
 app.get('/', function (req, res) {
