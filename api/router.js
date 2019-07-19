@@ -3,11 +3,11 @@ const ClienteControlador = require('../app/controladores/clienteControlador.js')
 module.exports = (app) => {
 //Recurso clientes encargado de consultar un cliente segun el id en base de datos
 app.get('/clientes/:id', function(req, res) { 
-    //ClienteControlador.consultaCliente(req, res);
+    ClienteControlador.consultaCliente(req, res);
 });
 //Recurso Clientes encargado de consultar todos los clientes de la base de datos
 app.get('/clientes', function(req, res){
-    //ClienteControlador.consultaClientes(req, res);
+    ClienteControlador.consultaClientes(req, res);
 });
 //Recurso raiz que me devuelve un json con la estructura de una persona
 app.get('/', function (req, res) {
