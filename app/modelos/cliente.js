@@ -1,5 +1,5 @@
-const db = require('../../bd/bd');
-const sql = db.connection;
+const db = require('../../bd/bd');//Impostamos conexion a la base de datos
+const sql = db.connection;//Instanciamos conexion para usar con las consultas
 
 //Creamos un objeto de la tabla para proteger y enmascarar los nombres de la base de datos
 const table = {
@@ -13,7 +13,7 @@ const table = {
 }
 //Creamos la clase Cliente para empezar a crear las respectivas funcionalidades.
 class Cliente {
-    
+    //PAsamos las variables globales por referencia
     constructor(id,nombres,documento,profesion) {
         if (id) {
             this.id     = id;    
@@ -22,7 +22,7 @@ class Cliente {
         this.documento  = documento;
         this.profesion  = profesion;
     }
-
+    //Funcion encargada de Mapear los campos de la base de datos en el orden que estan segun la super clase, con el fin de enmascarar los campos de la base de datos
     static mapFactory(entity){
         let mp = {};
         if(entity){
@@ -35,7 +35,7 @@ class Cliente {
         }        
         return mp;
     }
-
+    //Funcion que consulta un cliente segun el id de la base de datos
     static consultarCliente(id, callback) {
         //Armamos la consulta segn los parametros que necesitemos
         let query = 'SELECT * ';
@@ -56,7 +56,7 @@ class Cliente {
             throw "Problema conectado con Mysql en consultarCliente";
         } 
     }
-
+    //Funcion encargada de consultar todos los clientes de la base de datos
     static consultarClientes(callback) {
         //Armamos la consulta segn los parametros que necesitemos
         let query = 'SELECT * ';
